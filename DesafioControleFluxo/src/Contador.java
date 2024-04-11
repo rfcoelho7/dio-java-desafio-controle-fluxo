@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Desafio {
+public class Contador {
     public static void main(String[] args) {
         AdicionaLinhaHorizontal();
         System.out.println("Olá! A seguir, favor informe dois números.");
