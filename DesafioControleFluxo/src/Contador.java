@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Contador {
     public static void main(String[] args) {
-        AdicionaLinhaHorizontal();
+        adicionaLinhaHorizontal();
         System.out.println("Olá! A seguir, favor informe dois números.");
         System.out.println("Favor atente-se: os números devem ser inteiros, e o segundo deve ser o maior.");
-        AdicionaLinhaHorizontal();
+        adicionaLinhaHorizontal();
         Scanner input = new Scanner(System.in);
         System.out.print("Informe o primeiro número inteiro: ");
         try {
@@ -14,32 +14,32 @@ public class Contador {
             int number2 = input.nextInt();
             System.out.println("");
             input.close();
-            int totalNumeros = DeterminaTotalNumeros(number1,number2);
-            AdicionaLinhaHorizontal();
+            int totalNumeros = determinaTotalNumeros(number1,number2);
+            adicionaLinhaHorizontal();
             System.out.println("Total de números a serem impressos: "+totalNumeros+". Imprimindo.....\n");
             for (int i = 0 ; i< totalNumeros ; i++){
                 System.out.println("Imprimindo o número " + (i+1));
             }
-            AdicionaLinhaHorizontal();
+            adicionaLinhaHorizontal();
         } catch (java.util.InputMismatchException e) {
-            AdicionaLinhaHorizontal();
+            adicionaLinhaHorizontal();
             System.err.println("##### ERRO: Favor atente-se ao tipo do input requerido. Ambos devem ser NÚMEROS INTEIROS. #####");
-            AdicionaLinhaHorizontal();
+            adicionaLinhaHorizontal();
         } catch (ParametrosInvalidosException e){
-            AdicionaLinhaHorizontal();
+            adicionaLinhaHorizontal();
             System.err.println("##### ERRO: Favor atente-se ao requisito: o segundo número deve ser MAIOR que o primeiro. #####");
-            AdicionaLinhaHorizontal();
+            adicionaLinhaHorizontal();
         }
     }
     
-    public static int DeterminaTotalNumeros(int number1, int number2) throws ParametrosInvalidosException {
+    public static int determinaTotalNumeros(int number1, int number2) throws ParametrosInvalidosException {
         if(number1 > number2){
             throw new ParametrosInvalidosException();
         }
         return number2-number1;
     }
 
-    private static void AdicionaLinhaHorizontal(){
+    private static void adicionaLinhaHorizontal(){
         System.out.println("__________________________________________________________________________________\n");
     }
 }
